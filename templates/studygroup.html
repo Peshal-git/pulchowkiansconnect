@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <form method="post" class="meeting-form">
+            {% csrf_token %}
+            <input type="text" name="group_name" placeholder="Group Name" required>
+            <input type="datetime-local" name="meeting_time" required>
+            <input type="text" name="meet_link" placeholder="Google Meet Link" required>
+            <input type="text" name="host" placeholder="Host" required>
+            <input type="text" name="topic" placeholder="Topic" required>
+            <input type="text" name="note" placeholder="Note">
+            <button type="submit">Schedule Meeting</button>
+        </form>
+    </div>
+</body>
+
+
+{% endblock content %}

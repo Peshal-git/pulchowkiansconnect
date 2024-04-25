@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    <div class="containerlostandfound">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="item_name">Item Name:</label>
+            <input type="text" id="item_name" name="item_name" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+{% endblock content %}
+

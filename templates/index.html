@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="content-area">
+    
+    <div class="search-bar-container">
+        <form method="get">
+            <input type="text" placeholder="Search..." name="postname"
+                class="search-bar">
+            <button class="search-button">Search</button>
+        </form>
+    </div>
+    
+    {% for n in postData %}
+
+    <section class="section">
+        <h2>
+        <a href="/postdetails/{{n.slug}}" class="titlepost"> {{n.post_title}} </h2> </a>
+        <p>Posted by {{n.post_user}} on {{n.post_time}}</p>
+    </section>
+    {% empty %}
+    <section class="section">
+        <h2>No Data Found.</h2>
+    </section>
+    {% endfor %}
+
+</main>
+
+{% endblock content %}
+    
